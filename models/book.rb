@@ -12,3 +12,24 @@ class Book
         @genre_id = options['genre_id'].to_i
         @price = options['price']
     end
+    def save()
+        sql = "INSET INTO books
+        (
+            name,
+            author,
+            publisher_id,
+            genre_id,
+            price
+        )
+        VALUES
+        (
+            $1, $2, $3, $4, $5
+        )
+        RETUNING id"
+        values = [name, author, publisher_id, genre_id, price]
+        result = SqlRunner.run(sql, values)
+        id = result.first['id']
+        @id = id
+    end
+
+end
