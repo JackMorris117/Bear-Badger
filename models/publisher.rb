@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class publisher
+class Publisher
     attr_accessor :name
     attr_reader :id
 
