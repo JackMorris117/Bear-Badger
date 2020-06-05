@@ -49,6 +49,10 @@ class Book
         values = [name, author, publisher_id, genre_id, price]
         SqlRunner.run(sql, values)
     end
+    def publisher()
+        publisher = Publisher.find(@publisher_id)
+        return publisher
+    end
 
     def delete()
         sql = "DELETE FROM books
