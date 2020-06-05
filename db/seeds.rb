@@ -2,6 +2,7 @@ require_relative('../models/book')
 require_relative('../models/publisher')
 require_relative('../models/genre')
 
+
 publisher1 = Publisher.new({'name' => 'Penguin'})
 publisher2 = Publisher.new({'name' => 'Macmillan'})
 publisher3 = Publisher.new({'name' => 'HarperCollins'})

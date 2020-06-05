@@ -1,6 +1,5 @@
 require_relative('../db/sql_runner')
 
-
 class Publisher
     attr_accessor :name
     attr_reader :id
@@ -41,7 +40,6 @@ class Publisher
         SqlRunner.run(sql, values)
     end
     
-
     def delete()
         sql = "DELETE FROM publishers
         WHERE id = $1"

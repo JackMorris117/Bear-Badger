@@ -8,7 +8,7 @@ class Book
         @id = options['id'].to_i if options['id']
         @name = options['name']
         @author = options['author']
-        @publusher_id = options['publisher_id'].to_i
+        @publisher_id = options['publisher_id'].to_i
         @genre_id = options['genre_id'].to_i
         @price = options['price']
     end
@@ -54,6 +54,10 @@ class Book
     def publisher()
         publisher = Publisher.find(@publisher_id)
         return publisher
+    end
+    def genre()
+        genre = Genre.find(@genre_id)
+        return genre
     end
 
     def delete()

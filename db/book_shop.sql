@@ -1,15 +1,17 @@
 DROP TABLE books;
-DROP TABLE publishers;
 DROP TABLE genres;
+DROP TABLE publishers;
+
+CREATE TABLE publishers (
+    id SERIAL primary key,
+    name VARCHAR(255)
+);
 
 CREATE TABLE genres (
     id SERIAL primary key,
     name VARCHAR(255)
 );
-CREATE TABLE publishers (
-    id SERIAL primary key,
-    name VARCHAR(255)
-);
+
 
 CREATE TABLE books (
     id SERIAL primary key,
