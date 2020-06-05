@@ -55,7 +55,7 @@ class Genre
     end
 
     def self.map_items(genre_data)
-        return genre_data.map { |genre| genre.new(genre) }
+        return genre_data.map { |genre| Genre.new(genre) }
     end
 
     def self.find(id)

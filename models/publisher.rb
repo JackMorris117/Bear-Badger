@@ -40,6 +40,7 @@ class Publisher
         values = [name]
         SqlRunner.run(sql, values)
     end
+    
 
     def delete()
         sql = "DELETE FROM publishers
@@ -56,7 +57,7 @@ class Publisher
     end
 
     def self.map_items(publisher_data)
-        return publisher_data.map { |publisher| publisher.new(publisher) }
+        return publisher_data.map { |publisher| Publisher.new(publisher) }
     end
 
     def self.find(id)

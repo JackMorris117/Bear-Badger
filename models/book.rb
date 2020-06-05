@@ -49,6 +49,8 @@ class Book
         values = [name, author, publisher_id, genre_id, price]
         SqlRunner.run(sql, values)
     end
+    
+
     def publisher()
         publisher = Publisher.find(@publisher_id)
         return publisher
@@ -69,7 +71,7 @@ class Book
     end
 
     def self.map_items(book_data)
-        return book_data.map { |book| book.new(book) }
+        return book_data.map { |book| Book.new(book) }
     end
 
     def self.find(id)
