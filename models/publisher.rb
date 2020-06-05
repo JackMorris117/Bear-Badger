@@ -9,6 +9,7 @@ class Publisher
         @name = options['name']
         
     end
+
     def save()
         sql = "INSERT INTO publishers
         (
@@ -19,7 +20,7 @@ class Publisher
         (
             $1
         )
-        RETUNING id"
+        RETURNING id"
         values = [name]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
@@ -56,6 +57,7 @@ class Publisher
     def self.map_items(publisher_data)
         return publisher_data.map { |publisher| publisher.new(publisher) }
     end
+
     def self.find(id)
         sql = "SELECT * FROM publishers
         WHERE id = $1"

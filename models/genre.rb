@@ -9,6 +9,7 @@ class Genre
         @name = options['name']
         
     end
+
     def save()
         sql = "INSERT INTO genres
         (
@@ -19,7 +20,7 @@ class Genre
         (
             $1
         )
-        RETUNING id"
+        RETURNING id"
         values = [name]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
@@ -56,6 +57,7 @@ class Genre
     def self.map_items(genre_data)
         return genre_data.map { |genre| genre.new(genre) }
     end
+
     def self.find(id)
         sql = "SELECT * FROM genres
         WHERE id = $1"

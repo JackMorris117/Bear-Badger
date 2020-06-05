@@ -12,6 +12,7 @@ class Book
         @genre_id = options['genre_id'].to_i
         @price = options['price']
     end
+
     def save()
         sql = "INSERT INTO books
         (
@@ -25,7 +26,7 @@ class Book
         (
             $1, $2, $3, $4, $5
         )
-        RETUNING id"
+        RETURNING id"
         values = [name, author, publisher_id, genre_id, price]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
@@ -66,6 +67,7 @@ class Book
     def self.map_items(book_data)
         return book_data.map { |book| book.new(book) }
     end
+
     def self.find(id)
         sql = "SELECT * FROM books
         WHERE id = $1"
