@@ -1,0 +1,51 @@
+<h2>Edit <%= @book %></h2>
+<form method="POST" action="/BearAndBadger/<%= @book.id %>">
+  <div class="form-wrapper">
+    
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @book.name %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" value="<%= @book.author%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="publisher_select">Select Publisher:</label> 
+      <select name="publisher_id" id="publisher_select" selected="<%= @book.publisher_id  %>">
+        <% @publishers.each do |publisher| %>
+          <% if publisher.id == @book.publisher_id %>
+            <option value=<%= publisher.id %> selected><%= publisher.name.capitalize %></option>
+          <% else %>
+            <option value=<%= publisher.id %>><%= publisher.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <label for="genre_select">Select Genre:</label> 
+      <select name="genre_id" id="genre_select" selected="<%= @book.genre_id  %>">
+        <% @genres.each do |genres| %>
+          <% if genre.id == @book.genre_id %>
+            <option value=<%= genre.id %> selected><%= genre.name.capitalize %></option>
+          <% else %>
+            <option value=<%= genre.id %>><%= genre.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <label for="price">Price:</label>
+      <input type="number" name="price" id="price" value="<%= @book.price %>"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Enrol book"/>
+    </div>
+
+  </div>
+</form>
