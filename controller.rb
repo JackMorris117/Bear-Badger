@@ -15,7 +15,7 @@ end
 get '/BearAndBadger/about-us' do
     erb( :about_us )
 end
-get 'BearAndBadger/:id'do 
+get '/BearAndBadger/:id'do 
     @book = Book.find(params[:id])
     erb( :show )
 end
@@ -25,4 +25,9 @@ get '/BearAndBadger/:id/edit' do
 
     @book = Book.find(params['id'])
     erb(:edit)
-  end
+end
+get '/BearAndBadger/:id'do 
+    @book = Book.new(params)
+    student.update
+    redirect to "/BearAndBadger/#{params['id']}"
+end
