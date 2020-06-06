@@ -29,18 +29,20 @@ post '/BearAndBadger' do
     @book.save()
     erb(:create)
 end
-get '/BearAndBadger/:id/edit' do # edit
+get '/BearAndBadger/:id/edit' do  
     @book = Book.find( params[:id] )
+    @publishers = Publisher.all
+    @genres = Genre.all
     erb(:edit)
 end
-post '/BearAndBadger/:id' do # update
+post '/BearAndBadger/:id' do  
     book_to_update = Book.new( params )
     book_to_update.update()
     redirect to '/BearAndBadger'
 end
+post '/BearAndBadger/:id/delete' do 
+    book = Book.find( params[:id] )
+    book.delete()
+    redirect to '/BearAndBadger'
+  end
   
-get '/BearAndBadger/:id'do 
-    @book = Book.new(params)
-    student.update
-    redirect to "/BearAndBadger/#{params['id']}"
-end
