@@ -14,17 +14,16 @@ class Genre
         sql = "INSERT INTO genres
         (
             name
-            
         )
         VALUES
         (
             $1
         )
         RETURNING id"
-        values = [name]
+        values = [@name]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
-        @id = id
+        @id = id.to_i
     end
 
     def update()

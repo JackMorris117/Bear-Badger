@@ -29,10 +29,10 @@ class Book
             $1, $2, $3, $4, $5, $6
         )
         RETURNING id"
-        values = [name, author, publisher_id, genre_id, price, stock]
+        values = [@name, @author, @publisher_id, @genre_id, @price, @stock]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
-        @id = id
+        @id = id.to_i
     end
 
     def update()
@@ -49,7 +49,7 @@ class Book
             $1, $2, $3, $4, $5, $6
         )
         WHERE id = $7"
-        values = [name, author, publisher_id, genre_id, price, stock]
+        values = [@name, @author, @publisher_id, @genre_id, @price, @stock]
         SqlRunner.run(sql, values)
     end
     

@@ -14,17 +14,16 @@ class Publisher
         sql = "INSERT INTO publishers
         (
             name
-            
         )
         VALUES
         (
             $1
         )
         RETURNING id"
-        values = [name]
+        values = [@name]
         result = SqlRunner.run(sql, values)
-        id = result.first['id']
-        @id = id
+        id = result.first["id"]
+        @id = id.to_i
     end
 
     def update()
@@ -36,7 +35,7 @@ class Publisher
             $1
         )
         WHERE id = $2"
-        values = [name]
+        values = [@name]
         SqlRunner.run(sql, values)
     end
     
