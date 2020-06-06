@@ -35,7 +35,7 @@ class Genre
             $1
         )
         WHERE id = $2"
-        values = [@name]
+        values = [@name, @id]
         SqlRunner.run(sql, values)
     end
 

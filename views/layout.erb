@@ -5,17 +5,16 @@
       <title>BearAndBadger</title>
       <link rel= "stylesheet" href="/style1.css">
     </head>
-    <body>
-      <nav>
-        <ul>
-          <li> <a href="/BearAndBadger">Home</a> </li>
-          <li> <a href="/BearAndBadger/about-us">About Us</a> </li>
-          <li> <a href="/BearAndBadger/all-books">All Books</a> </li>
-          <li> <a href="/BearAndBadger/new">Add book to System</a> </li>
+    
+    <nav class="navigation-bar">
+      <img class="logo" src="bear_and_badger_logo.png">
+        <a href="/BearAndBadger">Home</a>
+        <a href="/BearAndBadger/new">Add book to System</a>
+        <a href="/BearAndBadger/all-books">All Books</a>
+        <a href="/BearAndBadger/all-genres">All Genres</a>
+        <a href="/BearAndBadger/all-publishers">All Publishers</a>
+        <a href="/BearAndBadger/about-us">About Us</a>
+        <%= yield %>
 
-        </ul>
-      </nav>
-
-       <%= yield %>
-    </body>
-  </html>
+    </nav>
+</html>

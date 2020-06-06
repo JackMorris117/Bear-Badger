@@ -9,6 +9,7 @@ get '/BearAndBadger' do
     @books = Book.all()
     erb(:index)
 end
+
 get '/BearAndBadger/new' do 
     @books = Book.all
     @publishers = Publisher.all
@@ -50,8 +51,13 @@ get '/BearAndBadger/:id/edit' do
     @publishers = Publisher.all
     @genres = Genre.all
     @book = Book.find( params[:id] )
-
     erb(:edit)
+end
+
+post '/BearAndBadger/:id' do
+    book = Book.new(params)
+    book.update
+    redirect to "/BearAndBadger"
 end
 
 post '/BearAndBadger/:id' do  
