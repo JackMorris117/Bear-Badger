@@ -1,48 +1,49 @@
-<form method="post" action="/BearAndBadger">
-  <label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  />
+<h2>Upload Book</h2>
+<form method="POST" action="/BearAndBadger">
+  <div class="form-wrapper">
+    
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"/>
+    </div>
 
-  <label for="author-field">Author:</label>
-  <input
-  type="text"
-  name="author"
-  id="author-field"
-  />
+    <div class="form-el">
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author"/>
+    </div>
 
-  <label for="publisher-selection">Select a Publisher:</label>
-  <select name="publisher" id="publisher-selection">
-    <option value="Penguin">Penguin</option>
-    <option value="Macmillan">Macmillan</option>
-    <option value="HarperCollins">HarperCollins</option>
+    <div class="form-el">
+      <label for="publisher_select">Select Publisher:</label> 
+      <select name="publisher_id" id="publisher_select">
+        <% @publishers.each do |publisher| %>
+            <option value=<%= publisher.id %>><%= publisher.name%></option>
+        <% end %>
+      </select>
+    </div>
 
-  </select>
+     <div class="form-el">
+      <label for="genre_select">Select Genre:</label> 
+      <select name="genre_id" id="genre_select">
+        <% @genres.each do |genre| %>
+            <option value=<%= genre.id %>><%= genre.name %></option>
+        <% end %>
+      </select>
+    </div>
 
-  <label for="genre-selection">Select a Genre:</label>
-  <select name="genre" id="genre-selection">
-    <option value="Horror">Horror</option>
-    <option value="Sci-Fi">Sci-Fi</option>
-    <option value="Mystery">Mystery</option>
-    <option value="Fantasy">Fantasy</option>
-    <option value="Biography">Biography</option>
+    <div class="form-el">
+      <label for="price">Price:</label>
+      <input type="number" name="price" id="price"/>
+    </div>
 
-  </select>
+    <div class="form-el">
+      <label for="stock">Stock:</label>
+      <input type="stock" name="stock" id="stock"/>
+    </div>
 
-  <label for="price-field">Price:</label>
-  <input
-  type="number"
-  name="price"
-  id="price-field"
-  />
-  <label for="stock-field">Stock:</label>
-  <input
-  type="number"
-  name="stock"
-  id="stock-field"
-  />
 
-  <input type="submit" value="Add book to system">
+    <div class="form-el">
+      <input type="submit" value="Add Book to System"/>
+    </div>
+
+  </div>
 </form>

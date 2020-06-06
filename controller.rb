@@ -17,32 +17,38 @@ get '/BearAndBadger/all-books' do
     @books = Book.all
     erb(:all_books)
 end
+
 get '/BearAndBadger/about-us' do
     erb(:about_us)
 end
+
 get '/BearAndBadger/:id'do 
     @book = Book.find(params[:id])
     erb(:show)
 end
+
 post '/BearAndBadger' do 
     @book = Book.new( params )
     @book.save()
     erb(:create)
 end
+
 get '/BearAndBadger/:id/edit' do  
     @book = Book.find( params[:id] )
     @publishers = Publisher.all
     @genres = Genre.all
     erb(:edit)
 end
+
 post '/BearAndBadger/:id' do  
     book_to_update = Book.new( params )
     book_to_update.update()
     redirect to '/BearAndBadger'
 end
+
 post '/BearAndBadger/:id/delete' do 
     book = Book.find( params[:id] )
     book.delete()
     redirect to '/BearAndBadger'
-  end
+end
   
