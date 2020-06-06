@@ -10,12 +10,23 @@ get '/BearAndBadger' do
     erb(:index)
 end
 get '/BearAndBadger/new' do 
+    @books = Book.all
+    @publishers = Publisher.all
+    @genres = Genre.all
     erb(:new)
 end
 
 get '/BearAndBadger/all-books' do
     @books = Book.all
     erb(:all_books)
+end
+get '/BearAndBadger/all-publishers' do
+    @publishers = Publisher.all
+    erb(:all_publishers)
+end
+get '/BearAndBadger/all-genres' do
+    @genres = Genre.all
+    erb(:all_genres)
 end
 
 get '/BearAndBadger/about-us' do
@@ -24,6 +35,8 @@ end
 
 get '/BearAndBadger/:id'do 
     @book = Book.find(params[:id])
+    @publishers = Publisher.all
+    @genres = Genre.all
     erb(:show)
 end
 

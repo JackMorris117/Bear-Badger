@@ -1,0 +1,10 @@
+
+<div class="list">
+  <ul>
+    <% for genre in @genres %>
+      <li>
+        <a href="/BearAndBadger/<%= genre.id %>"><%= genre.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+
+<div class="list">
+  <ul>
+    <% for publisher in @publishers %>
+      <li>
+        <a href="/BearAndBadger/<%= publisher.id %>"><%= publisher.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>

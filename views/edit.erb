@@ -25,6 +25,10 @@
     value="Macmillan"
     <%= "selected" if @book.publisher_id == 2 %>
     >Macmillan</option>
+    <option
+    value="HarperCollins"
+    <%= "selected" if @book.publisher_id == 3 %>
+    >HarperCollins</option>
   </select>
   
    <label for="genre-selection">Select a genre:</label>

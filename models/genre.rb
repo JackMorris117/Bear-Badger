@@ -22,7 +22,7 @@ class Genre
         RETURNING id"
         values = [@name]
         result = SqlRunner.run(sql, values)
-        id = result.first['id']
+        id = result.first["id"]
         @id = id.to_i
     end
 
@@ -35,7 +35,7 @@ class Genre
             $1
         )
         WHERE id = $2"
-        values = [name]
+        values = [@name]
         SqlRunner.run(sql, values)
     end
 
