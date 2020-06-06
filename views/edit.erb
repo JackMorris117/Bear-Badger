@@ -1,79 +1,58 @@
-<form method="post" action="/BearAndBadger/<%= @book.id %>">
-  <label for="name-field">Name:</label>
-  <input
-  type="text"
-  name="name"
-  id="name-field"
-  value="<%= @book.name %>"
-  />
+<h2>Edit Book<%= @book %></h2>
+<form method="POST" action="/BearAndBadger <%= @book.id %>">
+  <div class="form-wrapper">
+    
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @book.name %>"/>
+    </div>
 
-  <label for="author-field">Author:</label>
-  <input
-  type="text"
-  name="author"
-  id="author-field"
-  value="<%= @book.author %>"
-  />
+    <div class="form-el">
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" value="<%= @book.author %>"/>
+    </div>
 
-  <label for="publisher-selection">Select a publisher:</label>
-  <select name="publisher_id" id="publisher-selection">
-    <option
-    value="Penguin"
-    <%= "selected" if @book.publisher_id == 1 %>
-    >Penguin</option>
-    <option
-    value="Macmillan"
-    <%= "selected" if @book.publisher_id == 2 %>
-    >Macmillan</option>
-    <option
-    value="HarperCollins"
-    <%= "selected" if @book.publisher_id == 3 %>
-    >HarperCollins</option>
-  </select>
-  
-   <label for="genre-selection">Select a genre:</label>
-  <select name="genre_id" id="genre-selection">
-    <option
-    value="Romance"
-    <%= "selected" if @book.genre_id == 1 %>
-    >Romance</option>
-    <option
-    value="Horror"
-    <%= "selected" if @book.genre_id == 2 %>
-    >Horror</option>
-    <option
-    value="Sci-Fi"
-    <%= "selected" if @book.genre_id == 2 %>
-    >Sci-Fi</option>
-    <option
-    value="Mystery"
-    <%= "selected" if @book.genre_id == 2 %>
-    >Mystery</option>
-    <option
-    value="Fantasy"
-    <%= "selected" if @book.genre_id == 2 %>
-    >Fantasy</option>
-    <option
-    value="Biography"
-    <%= "selected" if @book.genre_id == 2 %>
-    >Biography</option>
-  </select>
+    <div class="form-el">
+      <label for="publisher_select">Select Publisher:</label> 
+      <select name="publisher_id" id="publisher_select" selected="<%= @book.publisher_id  %>">
+        <% @publishers.each do |publisher| %>
+          <% if publisher.id == @book.publisher_id %>
+            <option value=<%= publisher.id %> selected><%= publisher.name.capitalize %></option>
+          <% else %>
+            <option value=<%= publisher.id %>><%= publisher.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
 
-  <label for="price-field">Price:</label>
-  <input
-  type="number"
-  name="price"
-  id="price-field"
-  value="<%= @book.price() %>"
-  />
 
-  <label for="stock-field">Stock:</label>
-  <input
-  type="number"
-  name="stock"
-  id="stock-field"
-  value="<%= @book.stock() %>"
-  />
+    <div class="form-el">
+      <label for="genre_select">Select Genre:</label> 
+      <select name="genre_id" id="genre_select" selected="<%= @book.genre_id  %>">
+        <% @genres.each do |genre| %>
+          <% if genre.id == @book.genre_id %>
+            <option value=<%= genre.id %> selected><%= genre.name.capitalize %></option>
+          <% else %>
+            <option value=<%= genre.id %>><%= genre.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
 
-  <input type='submit' value="Edit book">
+    <div class="form-el">
+      <label for="price">Price:</label>
+      <input type="number" name="price" id="price" value="<%= @book.price %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="stock">Stock:</label>
+      <input type="stock" name="stock" id="stock" value="<%= @book.stock %>"/>
+    </div>
+
+
+    <div class="form-el">
+      <input type="submit" value="Finish Edit"/>
+    </div>
+
+  </div>
 </form>

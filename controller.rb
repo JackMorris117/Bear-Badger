@@ -47,9 +47,10 @@ post '/BearAndBadger' do
 end
 
 get '/BearAndBadger/:id/edit' do  
-    @book = Book.find( params[:id] )
     @publishers = Publisher.all
     @genres = Genre.all
+    @book = Book.find( params[:id] )
+
     erb(:edit)
 end
 
