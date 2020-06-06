@@ -31,21 +31,24 @@ book1 = Book.new({
     'author' => 'John Steinbeck',
     'publisher_id' => publisher1.id,
     'genre_id' => genre1.id,
-    'price' => 10 })
+    'price' => 10,
+    'stock' => 5})
 
 book2 = Book.new({
     'name' => 'America Is in the Heart',
     'author' => 'Carlos Bulosan',
     'publisher_id' => publisher1.id,
     'genre_id' => genre6.id,
-    'price' => 10 })
+    'price' => 10,
+    'stock' => 5})
 
 book3 = Book.new({
     'name' => 'Wuthering Heights',
     'author' => 'Emily Bronte',
     'publisher_id' => publisher1.id,
     'genre_id' => genre1.id,
-    'price' => 10 })
+    'price' => 10,
+    'stock' => 5})
     
 book1.save
 book2.save

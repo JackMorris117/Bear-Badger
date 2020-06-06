@@ -1,4 +1,7 @@
 <% @books.each do |book| %>
   <p>Name: <%= book.name() %></p>
+  <p>Stock: <%= book.stock %> </p>
+  <p>Price: £<%= book.price %> </p>
+  <p><a href="/BearAndBadger/<%= book.id %>">Show book</a></p>
   <hr />
 <% end %>

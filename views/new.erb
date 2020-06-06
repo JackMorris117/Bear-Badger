@@ -1,0 +1,48 @@
+<form method="post" action="/BearAndBadger">
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  />
+
+  <label for="author-field">Author:</label>
+  <input
+  type="text"
+  name="author"
+  id="author-field"
+  />
+
+  <label for="publisher-selection">Select a Publisher:</label>
+  <select name="publisher" id="publisher-selection">
+    <option value="Penguin">Penguin</option>
+    <option value="Macmillan">Macmillan</option>
+    <option value="HarperCollins">HarperCollins</option>
+
+  </select>
+
+  <label for="genre-selection">Select a Genre:</label>
+  <select name="genre" id="genre-selection">
+    <option value="Horror">Horror</option>
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Biography">Biography</option>
+
+  </select>
+
+  <label for="price-field">Price:</label>
+  <input
+  type="number"
+  name="price"
+  id="price-field"
+  />
+  <label for="stock-field">Stock:</label>
+  <input
+  type="number"
+  name="stock"
+  id="stock-field"
+  />
+
+  <input type="submit" value="Add book to system">
+</form>

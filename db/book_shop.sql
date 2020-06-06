@@ -19,6 +19,7 @@ CREATE TABLE books (
     author VARCHAR(255),
     publisher_id INT REFERENCES publishers(id),
     genre_id INT REFERENCES genres(id),
-    price INT
+    price INT,
+    stock INT
 
 );

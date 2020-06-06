@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Book
-    attr_accessor :name, :author, :publisher_id, :genre_id, :price
+    attr_accessor :name, :author, :publisher_id, :genre_id, :price, :stock
     attr_reader :id
 
     def initialize(options)
@@ -10,7 +10,8 @@ class Book
         @author = options['author']
         @publisher_id = options['publisher_id'].to_i
         @genre_id = options['genre_id'].to_i
-        @price = options['price']
+        @price = options['price'].to_i
+        @stock = options['stock'].to_i
     end
 
     def save()
@@ -20,14 +21,15 @@ class Book
             author,
             publisher_id,
             genre_id,
-            price
+            price,
+            stock
         )
         VALUES
         (
-            $1, $2, $3, $4, $5
+            $1, $2, $3, $4, $5, $6
         )
         RETURNING id"
-        values = [name, author, publisher_id, genre_id, price]
+        values = [name, author, publisher_id, genre_id, price, stock]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id
@@ -40,13 +42,14 @@ class Book
             author,
             publisher_id,
             genre_id,
-            price
+            price,
+            stock
         ) =
         (
-            $1, $2, $3, $4, $5
+            $1, $2, $3, $4, $5, $6
         )
-        WHERE id = $6"
-        values = [name, author, publisher_id, genre_id, price]
+        WHERE id = $7"
+        values = [name, author, publisher_id, genre_id, price, stock]
         SqlRunner.run(sql, values)
     end
     
