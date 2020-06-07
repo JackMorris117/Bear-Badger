@@ -1,0 +1,15 @@
+<h2>Edit Publisher<%= @publisher %></h2>
+<form method="POST" action="/BearAndBadger/publishers/ <%= @publisher.id %>">
+  <div class="form-wrapper">
+    
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @publisher.name %>"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Finish Edit"/>
+    </div>
+
+  </div>
+</form>

@@ -51,9 +51,6 @@ get '/BearAndBadger/all-genres' do
     erb(:all_genres)
 end
 
-get '/BearAndBadger/about-us' do
-    erb(:about_us)
-end
 
 get '/BearAndBadger/:id'do 
     @book = Book.find(params[:id])
@@ -97,16 +94,34 @@ get '/BearAndBadger/:id/edit' do
     erb(:edit)
 end
 
-post '/BearAndBadger/:id' do
+post '/BearAndBadger/:id' do 
     book = Book.new(params)
     book.update
     redirect to "/BearAndBadger"
 end
+get '/BearAndBadger/publishers/:id/edit' do  
+    @publisher = Publisher.find( params[:id] )
+    @genres = Genre.all
+    @books = Book.all
+    erb(:edit_publisher)
+end
+post '/BearAndBadger/publishers/:id' do
+    publisher = Publisher.new(params)
+    publisher.update
+    redirect to "/BearAndBadger/publishers"
+end
+
+
 
 
 post '/BearAndBadger/new-book/:id' do  
     book_to_update = Book.new( params )
     book_to_update.update()
+    redirect to '/BearAndBadger'
+end
+post '/BearAndBadger/new-publisher/:id' do  
+    publisher_to_update = Publisher.new( params )
+    publisher_to_update.update()
     redirect to '/BearAndBadger'
 end
 post '/BearAndBadger/new-genre/:id' do  
@@ -115,9 +130,23 @@ post '/BearAndBadger/new-genre/:id' do
     redirect to '/BearAndBadger'
 end
 
+
+
+
 post '/BearAndBadger/:id/delete' do 
     book = Book.find( params[:id] )
     book.delete()
     redirect to '/BearAndBadger'
 end
-  
+post '/BearAndBadger/publishers/:id/delete' do 
+    publisher = Publisher.find( params[:id] )
+    publisher.delete()
+    redirect to '/BearAndBadger/publishers'
+end
+
+
+
+
+get '/BearAndBadger/about-us' do
+    erb(:about_us)
+end

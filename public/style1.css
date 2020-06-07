@@ -2,7 +2,7 @@ body {
     background-color: lightblue;
     background-image: url("/b&bbackground.jpg");
     font-family: monospace;
-    font-size: large;
+    font-size: medium;
     font-weight: 500;
 }
 .navigation-bar {
