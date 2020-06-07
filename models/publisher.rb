@@ -27,7 +27,7 @@ class Publisher
     end
 
     def update()
-        binding.pry
+        
         sql = "UPDATE publishers SET
         (
             name

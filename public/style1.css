@@ -5,23 +5,27 @@ body {
     font-size: medium;
     font-weight: 500;
 }
-.navigation-bar {
-   width: 100%;  /* i'm assuming full width */
-   height: 80px; /* change it to desired width */
-}
-.logo {
-   
-   display: inline-block;
-   vertical-align: top;
-   width: 500px;
-   height: 200px;
-   margin-right: 0px;
-   margin-top: 20px;    /* if you want it vertically middle of the navbar. */
-}
-.navigation-bar > a {
-   display: inline-block;
-   vertical-align: top;
-   margin-right: 20px;
-   height: 0px;        /* if you want it to take the full height of the bar */
-   line-height: 80px;    /* if you want it vertically middle of the navbar */
-}
+/* The navigation bar */
+.navbar {
+   overflow: hidden;
+   position: fixed; 
+   top: 0; 
+   width: 100%;
+ }
+ 
+ .navbar a {
+   float: right;
+   display: block;
+   color: black;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: x-large;
+ }
+ 
+ .navbar a:hover {
+   background: grey;
+   color: black;
+ }
+
+ 
