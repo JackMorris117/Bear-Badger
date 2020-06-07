@@ -58,6 +58,7 @@ class Book
         publisher = Publisher.find(@publisher_id)
         return publisher
     end
+    
     def genre()
         genre = Genre.find(@genre_id)
         return genre
