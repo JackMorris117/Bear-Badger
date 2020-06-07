@@ -27,6 +27,12 @@ get '/BearAndBadger/new-publisher' do
     @genres = Genre.all
     erb(:new_publisher)
 end
+get '/BearAndBadger/new-genre' do 
+    @books = Book.all
+    @publishers = Publisher.all
+    @genres = Genre.all
+    erb(:new_genre)
+end
 
 get '/BearAndBadger/all-books' do
     @books = Book.all
@@ -63,9 +69,19 @@ post '/BearAndBadger/new-book' do
     @book.save()
     erb(:create)
 end
+post '/BearAndBadger/new-publisher' do 
+    @publisher = Publisher.new( params )
+    @publisher.save()
+    erb(:create)
+end
+post '/BearAndBadger/new-genre' do 
+    @genre = Genre.new( params )
+    @genre.save()
+    erb(:create)
+end
 
 get '/BearAndBadger/:id/edit' do  
-    @publisher = Publisher.all
+    @publishers = Publisher.all
     @genres = Genre.all
     @book = Book.find( params[:id] )
     erb(:edit)
@@ -80,6 +96,11 @@ end
 post '/BearAndBadger/new-book/:id' do  
     book_to_update = Book.new( params )
     book_to_update.update()
+    redirect to '/BearAndBadger'
+end
+post '/BearAndBadger/new-genre/:id' do  
+    genre_to_update = Genre.new( params )
+    genre_to_update.update()
     redirect to '/BearAndBadger'
 end
 
