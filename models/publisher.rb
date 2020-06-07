@@ -1,12 +1,12 @@
-require_relative('../db/sql_runner')
-
+require_relative("../db/sql_runner")
+require("pry")
 class Publisher
     attr_accessor :name
     attr_reader :id
 
     def initialize(options)
-        @id = options['id'].to_i if options['id']
-        @name = options['name']
+        @id = options["id"].to_i if options["id"]
+        @name = options["name"]
         
     end
 
@@ -27,6 +27,7 @@ class Publisher
     end
 
     def update()
+        binding.pry
         sql = "UPDATE publishers SET
         (
             name
@@ -38,6 +39,7 @@ class Publisher
         values = [@name, @id]
         SqlRunner.run(sql, values)
     end
+    
     
     def delete()
         sql = "DELETE FROM publishers

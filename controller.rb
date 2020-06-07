@@ -4,6 +4,11 @@ require_relative('./models/book')
 require_relative('./models/publisher')
 require_relative('./models/genre')
 also_reload('./models/*')
+require('pry')
+
+get '/BearAndBadger/about-us' do
+    erb(:about_us)
+end
 
 get '/BearAndBadger' do
     @books = Book.all()
@@ -38,6 +43,8 @@ get '/BearAndBadger/new-genre' do
     erb(:new_genre)
 end
 
+
+
 get '/BearAndBadger/all-books' do
     @books = Book.all
     erb(:all_books)
@@ -50,6 +57,8 @@ get '/BearAndBadger/all-genres' do
     @genres = Genre.all
     erb(:all_genres)
 end
+
+
 
 
 get '/BearAndBadger/:id'do 
@@ -71,6 +80,10 @@ get '/BearAndBadger/genres/:id'do
     erb(:show_genres)
 end
 
+
+
+
+
 post '/BearAndBadger/new-book' do 
     @book = Book.new( params )
     @book.save()
@@ -87,6 +100,7 @@ post '/BearAndBadger/new-genre' do
     erb(:create)
 end
 
+
 get '/BearAndBadger/:id/edit' do  
     @publishers = Publisher.all
     @genres = Genre.all
@@ -99,16 +113,20 @@ post '/BearAndBadger/:id' do
     book.update
     redirect to "/BearAndBadger"
 end
-get '/BearAndBadger/publishers/:id/edit' do  
-    @publisher = Publisher.find( params[:id] )
+
+get '/BearAndBadger/publishers/:id/edit-publisher' do  
     @genres = Genre.all
-    @books = Book.all
+    @book = Book.all
+    @publisher = Publisher.find( params[:id] )
     erb(:edit_publisher)
 end
-post '/BearAndBadger/publishers/:id' do
-    publisher = Publisher.new(params)
-    publisher.update
-    redirect to "/BearAndBadger/publishers"
+
+
+post '/BearAndBadger/publishers/:id' do 
+    publisher = Publisher.new( params ) 
+    publisher.update()
+    redirect to '/BearAndBadger'
+
 end
 
 
@@ -151,6 +169,3 @@ end
 
 
 
-get '/BearAndBadger/about-us' do
-    erb(:about_us)
-end

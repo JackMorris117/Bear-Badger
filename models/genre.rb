@@ -45,6 +45,7 @@ class Genre
         values = [@id]
         SqlRunner.run(sql, values)
     end
+    
 
     def self.all()
         sql = "SELECT * FROM genres"

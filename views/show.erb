@@ -2,13 +2,12 @@
 
 <h2>Author: <%= @book.author %></h2>
 <h2>Price: £<%= @book.price %></h2>
-<h2>Publisher: <%= @book.publisher_id %></h2>
+<h2>Stock:  <%= @book.stock %><%= (@book.stock < 3 ? " Low stock" : "")%></h2>
 
+<h2>Publisher: <%= Publisher.find(@book.publisher_id).name %></h2>
 
-
-
-
-<h2>Genre: <%= @book.genre_id %></h2>
+<h2>Genre: <%=Genre.find(@book.genre_id).name %></h2>
+<h2>ID: <%= @book.id %></h2>
 
 <a href="/BearAndBadger/<%= @book.id %>/edit">Edit</a>
 <form action="/BearAndBadger/<%= @book.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
