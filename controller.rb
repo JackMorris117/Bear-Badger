@@ -143,7 +143,11 @@ post '/BearAndBadger/publishers/:id/delete' do
     publisher.delete()
     redirect to '/BearAndBadger/publishers'
 end
-
+post '/BearAndBadger/genres/:id/delete' do 
+    genre = Genre.find( params[:id] )
+    genre.delete()
+    redirect to '/BearAndBadger/genres'
+end
 
 
 
