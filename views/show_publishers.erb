@@ -1,0 +1,7 @@
+<h1><%= @publishers.name %></h1>
+
+<h2>ID: <%= @publishers.id %></h2>
+
+
+<a href="/BearAndBadger/publisherss/<%= @publishers.id %>/edit">Edit</a>
+<form action="/BearAndBadger/publisherss/<%= @publishers.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

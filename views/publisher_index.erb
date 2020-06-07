@@ -1,0 +1,6 @@
+<% @publishers.each do |publisher| %>
+  <p>Name: <%= publisher.name() %></p>
+  <p><a href="/BearAndBadger/publishers/<%= publisher.id %>">Show publisher</a></p>
+  <hr />
+  
+<% end %>
