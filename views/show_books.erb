@@ -8,6 +8,9 @@
 
 <h2>Genre: <%=Genre.find(@book.genre_id).name %></h2>
 <h2>ID: <%= @book.id %></h2>
+<h2>Description</h2>
+<p> <%= @book.description %></p>
+
 
 <a href="/BearAndBadger/books/<%= @book.id %>/edit">Edit</a>
 <form action="/BearAndBadger/books/<%= @book.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

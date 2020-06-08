@@ -113,7 +113,7 @@ end
 post '/BearAndBadger/books/:id' do 
     book = Book.new(params)
     book.update
-    redirect to "/BearAndBadger"
+    redirect to "/BearAndBadger/books"
 end
 
 get '/BearAndBadger/publishers/:id/edit-publisher' do  
@@ -127,7 +127,7 @@ end
 post '/BearAndBadger/publishers/:id' do 
     publisher = Publisher.new( params ) 
     publisher.update()
-    redirect to '/BearAndBadger'
+    redirect to '/BearAndBadger/publishers'
 
 end
 get '/BearAndBadger/genres/:id/edit-genre' do  
@@ -140,7 +140,7 @@ end
 post '/BearAndBadger/genres/:id' do 
     genre = Genre.new( params ) 
     genre.update()
-    redirect to '/BearAndBadger'
+    redirect to '/BearAndBadger/genres'
 
 end
 
@@ -149,17 +149,17 @@ end
 post '/BearAndBadger/new-book/:id' do  
     book_to_update = Book.new( params )
     book_to_update.update()
-    redirect to '/BearAndBadger'
+    redirect to '/BearAndBadger/books'
 end
 post '/BearAndBadger/new-publisher/:id' do  
     publisher_to_update = Publisher.new( params )
     publisher_to_update.update()
-    redirect to '/BearAndBadger'
+    redirect to '/BearAndBadger/publishers'
 end
 post '/BearAndBadger/new-genre/:id' do  
     genre_to_update = Genre.new( params )
     genre_to_update.update()
-    redirect to '/BearAndBadger'
+    redirect to '/BearAndBadger/genres'
 end
 
 
