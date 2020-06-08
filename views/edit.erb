@@ -46,7 +46,12 @@
 
     <div class="form-el">
       <label for="stock">Stock:</label>
-      <input type="stock" name="stock" id="stock" value="<%= @book.stock %>"/>
+      <input type="number" name="stock" id="stock" value="<%= @book.stock %>"/>
+    </div>
+    
+    <div class="form-el">
+      <label for="name">Description:</label>
+      <input type="text" name="name" id="name" value="<%= @book.description %>"/>
     </div>
 
 
