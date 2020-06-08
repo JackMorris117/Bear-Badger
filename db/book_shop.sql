@@ -21,6 +21,6 @@ CREATE TABLE books (
     genre_id INT REFERENCES genres(id),
     price INT,
     stock INT,
-    description VARCHAR(1000)
+    description VARCHAR(2000)
 
 );

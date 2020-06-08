@@ -6,6 +6,10 @@ require_relative('./models/genre')
 also_reload('./models/*')
 require('pry')
 
+get '/BearAndBadger' do
+    erb(:home)
+end
+
 get '/BearAndBadger/about-us' do
     erb(:about_us)
 end
@@ -168,7 +172,7 @@ end
 post '/BearAndBadger/books/:id/delete' do 
     book = Book.find( params[:id] )
     book.delete()
-    redirect to '/BearAndBadger'
+    redirect to '/BearAndBadger/books'
 end
 post '/BearAndBadger/publishers/:id/delete' do 
     publisher = Publisher.find( params[:id] )

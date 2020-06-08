@@ -52,7 +52,7 @@ class Book
             $1, $2, $3, $4, $5, $6, $7
         )
         WHERE id = $8"
-        values = [@name, @author, @publisher_id, @genre_id, @price, @stock, @id]
+        values = [@name, @author, @publisher_id, @genre_id, @price, @stock, @description, @id]
         SqlRunner.run(sql, values)
     end
     

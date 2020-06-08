@@ -1,5 +1,5 @@
 <h2>Edit Book<%= @book %></h2>
-<form method="POST" action="/BearAndBadger/ <%= @book.id %>">
+<form method="POST" action="/BearAndBadger/books/ <%= @book.id %>">
   <div class="form-wrapper">
     
     <div class="form-el">
@@ -51,7 +51,7 @@
 
     <div class="form-el">
       <label for="description">Description:</label>
-      <input type="text" name="name" id="name" value="<%= @book.description %>"/>
+      <input type="text" name="description" id="description" value="<%= @book.description %>"/>
     </div>
 
 
