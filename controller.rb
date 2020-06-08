@@ -10,9 +10,9 @@ get '/BearAndBadger/about-us' do
     erb(:about_us)
 end
 
-get '/BearAndBadger' do
+get '/BearAndBadger/books' do
     @books = Book.all()
-    erb(:index)
+    erb(:index_book)
 end
 get '/BearAndBadger/publishers' do
     @publishers = Publisher.all()
@@ -62,11 +62,11 @@ end
 
 
 
-get '/BearAndBadger/:id'do 
+get '/BearAndBadger/books/:id'do 
     @book = Book.find(params[:id])
     @publishers = Publisher.all
     @genres = Genre.all
-    erb(:show)
+    erb(:show_books)
 end
 get '/BearAndBadger/publishers/:id'do 
     @book = Book.all
@@ -103,14 +103,14 @@ end
 
 
 
-get '/BearAndBadger/:id/edit' do  
+get '/BearAndBadger/books/:id/edit' do  
     @publishers = Publisher.all
     @genres = Genre.all
     @book = Book.find( params[:id] )
     erb(:edit)
 end
 
-post '/BearAndBadger/:id' do 
+post '/BearAndBadger/books/:id' do 
     book = Book.new(params)
     book.update
     redirect to "/BearAndBadger"
@@ -165,7 +165,7 @@ end
 
 
 
-post '/BearAndBadger/:id/delete' do 
+post '/BearAndBadger/books/:id/delete' do 
     book = Book.find( params[:id] )
     book.delete()
     redirect to '/BearAndBadger'

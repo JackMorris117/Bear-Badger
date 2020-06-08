@@ -1,8 +1,10 @@
+<p><a href="/BearAndBadger/all-books">Short list</a></p>
+
 <% @books.each do |book| %>
   <p>Name: <%= book.name() %></p>
   <p>Stock:  <%= book.stock %><%= (book.stock < 3 ? " Low stock" : "")%></p>
   <p>Price: £<%= book.price %> </p>
-  <p><a href="/BearAndBadger/<%= book.id %>">Show book</a></p>
+  <p><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></p>
   <hr />
   
 <% end %>
