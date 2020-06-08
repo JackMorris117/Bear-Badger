@@ -4,8 +4,11 @@ body {
     font-family: monospace;
     font-size: x-large;
     font-weight: 500;
+    background-repeat:no-repeat;
+
     
 }
+
 .navbar {
    overflow: hidden;
    position: fixed; 
@@ -45,5 +48,9 @@ body {
  }
  table#t02 {
    width: 100%;
+   background-color: lightcyan;
+ }
+ table#t03 {
+   width: 50%;
    background-color: lightcyan;
  }

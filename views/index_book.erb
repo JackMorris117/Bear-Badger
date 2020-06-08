@@ -1,14 +1,26 @@
-<p><a href="/BearAndBadger/all-books">Short list</a></p>
+<td><a href="/BearAndBadger/all-books">Short list</a></td>
 <style>
 p {
  text-align:center
 }
 </style>
-<% @books.each do |book| %>
-  <p>Name: <%= book.name() %></p>
-  <p>Stock:  <%= book.stock %><%= (book.stock < 3 ? " Low stock" : "")%></p>
-  <p>Price: £<%= book.price %> </p>
-  <p><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></p>
-  <hr />
+
+<table id="t03">
+
+  <tr>
+    <th>Title</th>
+    <th>Stock</th>
+    <th>Price</th>
+  </tr>
+
+  <tr>
+  <% @books.each do |book| %>
+  <td><%= book.name() %></td>
+  <td><%= book.stock %><%= (book.stock < 3 ? " Low stock" : "")%></td>
+  <td><%= book.price %> </td>
+  <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
   
+  </tr>
+  
+ 
 <% end %>
