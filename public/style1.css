@@ -1,9 +1,10 @@
 body {
     background-color: lightblue;
-    background-image: url("/b&bbackground.jpg");
+    background-image: url("/mountains.gif");
     font-family: monospace;
-    font-size: medium;
+    font-size: large;
     font-weight: 500;
+    
 }
 .navbar {
    overflow: hidden;
@@ -27,4 +28,23 @@ body {
    color: black;
  }
 
- 
+ th, td {
+ }
+ th {
+   text-align: center;
+   padding: 20px;
+ }
+ td {
+    text-align: center;
+ }
+ table {
+   border-spacing: 50px;
+ }
+ table#t01 {
+   width: 100%;
+   background-color: lightblue;
+ }
+ table#t02 {
+   width: 100%;
+   background-color: lightcyan;
+ }

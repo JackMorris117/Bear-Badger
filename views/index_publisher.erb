@@ -1,5 +1,9 @@
 <p><a href="/BearAndBadger/all-publishers">Short list</a></p>
-
+<style>
+p {
+ text-align:center
+}
+</style>
 <% @publishers.each do |publisher| %>
   <p>Name: <%= publisher.name() %></p>
   <p><a href="/BearAndBadger/publishers/<%= publisher.id %>">Show publisher</a></p>

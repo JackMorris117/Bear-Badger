@@ -1,5 +1,9 @@
 <p><a href="/BearAndBadger/all-books">Short list</a></p>
-
+<style>
+p {
+ text-align:center
+}
+</style>
 <% @books.each do |book| %>
   <p>Name: <%= book.name() %></p>
   <p>Stock:  <%= book.stock %><%= (book.stock < 3 ? " Low stock" : "")%></p>

@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Book
-    attr_accessor :name, :author, :publisher_id, :genre_id, :buying_cost :price, :stock, :description
+    attr_accessor :name, :author, :publisher_id, :genre_id, :buying_cost, :price, :stock, :description
     attr_reader :id
 
     def initialize(options)

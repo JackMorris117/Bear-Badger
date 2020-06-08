@@ -1,7 +1,14 @@
-<h1><%= @genres.name %></h1>
 
-<h2>ID: <%= @genres.id %></h2>
+<table id="t01">
+  <tr>
+    <th><%= @genres.name %></th>
+  </tr>
+  <tr>
+    <td>ID:<%= @genres.id %></td>
+  </tr>
+</table>
 
 
-<a href="/BearAndBadger/genres/<%= @genres.id %>/edit-genre">Edit</a>
+<span style="background-color: lightblue"><a href="/BearAndBadger/genres/<%= @genres.id %>/edit-genre">Edit</a>
+</span>
 <form action="/BearAndBadger/genres/<%= @genres.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
