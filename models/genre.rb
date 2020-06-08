@@ -28,12 +28,7 @@ class Genre
 
     def update()
         sql = "UPDATE genres SET
-        (
-            name
-        ) =
-        (
-            $1
-        )
+        name = $1
         WHERE id = $2"
         values = [@name, @id]
         SqlRunner.run(sql, values)
