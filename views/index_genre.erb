@@ -1,12 +1,17 @@
 <p><a href="/BearAndBadger/all-genres">Short list</a></p>
 <style>
 p {
- text-align:center
+ text-align:left
 }
 </style>
-<% @genres.each do |genre| %>
-  <p>Name: <%= genre.name() %></p>
-  <p><a href="/BearAndBadger/genres/<%= genre.id %>">Show Genre</a></p>
-  <hr />
-  
+<table id="t03">
+  <tr>
+    <th>Genre</th>
+    <th>ID</th>
+  </tr>
+  <tr>
+  <% @genres.each do |genre| %>
+  <td><%= genre.name() %></td>
+  <td><a href="/BearAndBadger/genres/<%= genre.id %>">Show genre</a></td>
+  </tr>
 <% end %>
