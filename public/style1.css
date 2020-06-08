@@ -2,7 +2,7 @@ body {
     background-color: lightblue;
     background-image: url("/mountains.gif");
     font-family: monospace;
-    font-size: large;
+    font-size: x-large;
     font-weight: 500;
     
 }
@@ -28,8 +28,7 @@ body {
    color: black;
  }
 
- th, td {
- }
+
  th {
    text-align: center;
    padding: 20px;
