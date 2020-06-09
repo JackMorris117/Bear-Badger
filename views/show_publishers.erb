@@ -2,9 +2,12 @@
 <table id="t01">
   <tr>
     <th><%= @publishers.name %></th>
+    <th><a href="/BearAndBadger/publishers/<%= @publishers.id %>/edit-publisher">Edit</a></th>
+
   </tr>
   <tr>
     <td>ID:<%= @publishers.id %></td>
+    <td> </td>
   </tr>
 </table>
 <table id="t03">
@@ -19,7 +22,6 @@
   </tr>
 <% end %>
 
-<span style="background-color: lightblue"><a href="/BearAndBadger/publishers/<%= @publishers.id %>/edit-publisher">Edit</a>
-</span>
+
 
 <form action="/BearAndBadger/publishers/<%= @publishers.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

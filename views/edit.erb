@@ -41,18 +41,18 @@
 
      <div class="form-el">
       <label for="buying_cost"style="background-color: lightblue">Buying Cost:</label>
-      <input type="number" name="buying_cost" id="buying_cost" value="<%= @book.buying_cost %>"/>
+      <input type="number" min = 0  step="0.01" name="buying_cost" id="buying_cost" value="<%= @book.buying_cost %>"/>
     </div>
 
     <div class="form-el">
       <label for="price"style="background-color: lightblue">Price:</label>
-      <input type="number" name="price" id="price" value="<%= @book.price %>"/>
+      <input type="number" min = 0  step="0.01" name="price" id="price" value="<%= @book.price %>"/>
     </div>
 
 
     <div class="form-el">
       <label for="stock"style="background-color: lightblue">Stock:</label>
-      <input type="number" name="stock" id="stock" value="<%= @book.stock %>"/>
+      <input type="number" min = 0 name="stock" id="stock" value="<%= @book.stock %>"/>
     </div>
 
 

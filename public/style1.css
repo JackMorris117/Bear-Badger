@@ -33,7 +33,7 @@ body {
 
  th {
    text-align: center;
-   padding: 20px;
+   padding: 5px;
  }
  td {
     text-align: center;
@@ -53,3 +53,8 @@ body {
    width: 50%;
    background-color:rgba(156, 224, 245, 0.699);
  }
+ table#t04 {
+   
+  width: 100%;
+  background-color:rgba(156, 224, 245, 0.863);
+}
