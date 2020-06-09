@@ -1,26 +1,22 @@
 <td><a href="/BearAndBadger/all-books">Short list</a></td>
 <style>
 p {
- text-align:center
+ text-align:left
 }
 </style>
 
 <table id="t03">
-
   <tr>
     <th>Title</th>
     <th>Stock</th>
     <th>Price</th>
   </tr>
-
   <tr>
   <% @books.each do |book| %>
   <td><%= book.name() %></td>
-  <td><%= book.stock %><%= (book.stock < 3 ? " Low stock" : "")%></td>
+  <td><%= book.stock %><%= (book.stock == 2 ? " Low stock" : book.stock == 0 ? "ut of stock" : "")%></td>
   <td><%= book.price %> </td>
   <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
-  
   </tr>
-  
- 
+   
 <% end %>

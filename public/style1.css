@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: rgb(6, 1, 49);
     background-image: url("/mountains.gif");
     font-family: monospace;
     font-size: x-large;
@@ -52,5 +52,5 @@ body {
  }
  table#t03 {
    width: 50%;
-   background-color: lightcyan;
+   background-color:rgba(156, 224, 245, 0.699);
  }

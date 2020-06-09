@@ -1,12 +1,20 @@
 <p><a href="/BearAndBadger/all-publishers">Short list</a></p>
 <style>
 p {
- text-align:center
+ text-align:left
 }
 </style>
-<% @publishers.each do |publisher| %>
-  <p>Name: <%= publisher.name() %></p>
-  <p><a href="/BearAndBadger/publishers/<%= publisher.id %>">Show publisher</a></p>
-  <hr />
-  
+
+<table id="t03">
+  <tr>
+    <th>Publisher</th>
+    <th>ID</th>
+  </tr>
+  <tr>
+  <% @publishers.each do |publisher| %>
+  <td><%= publisher.name() %></td>
+  <td><%= publisher.id %> </td>
+  <td><a href="/BearAndBadger/publishers/<%= publisher.id %>">Show publisher</a></td>
+  </tr>
 <% end %>
+

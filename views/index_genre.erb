@@ -12,6 +12,7 @@ p {
   <tr>
   <% @genres.each do |genre| %>
   <td><%= genre.name() %></td>
+  <td><%= genre.id %> </td>
   <td><a href="/BearAndBadger/genres/<%= genre.id %>">Show genre</a></td>
   </tr>
 <% end %>
