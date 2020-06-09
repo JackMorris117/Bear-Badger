@@ -7,6 +7,17 @@
     <td>ID:<%= @publishers.id %></td>
   </tr>
 </table>
+<table id="t03">
+<tr>
+
+<% @books.each do |book| %>
+  <%if book.publisher_id == @publishers.id%>
+  <th> <%= book.name %> </th>
+  <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
+  <% end %>
+
+  </tr>
+<% end %>
 
 <span style="background-color: lightblue"><a href="/BearAndBadger/publishers/<%= @publishers.id %>/edit-publisher">Edit</a>
 </span>

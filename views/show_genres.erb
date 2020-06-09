@@ -9,13 +9,14 @@
 </table>
 
 <table id="t03">
-<% @books.each do |book| %>
 <tr>
+<% @books.each do |book| %>
   <%if book.genre_id == @genres.id%>
   <th> <%= book.name %> </th>
   <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
-  </tr>
 <% end %>
+</tr>
+
 <% end %>
 <span style="background-color: lightblue"><a href="/BearAndBadger/genres/<%= @genres.id %>/edit-genre">Edit</a>
 </span>
