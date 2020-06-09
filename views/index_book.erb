@@ -17,7 +17,7 @@ p {
   <% @books.each do |book| %>
   <td><%= book.name() %></td>
   <td><%= book.stock %><%= (book.stock == 2 ? " Low stock" : book.stock == 0 ? "ut of stock" : "")%></td>
-  <td><%= book.price %> </td>
+  <td>£<%= book.price %> </td>
   <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
   </tr>
    

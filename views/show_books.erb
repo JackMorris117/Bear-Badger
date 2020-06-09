@@ -8,7 +8,7 @@
     <th>Stock</th>
     <th>Publisher</th>
     <th>Genre</th>
-   
+    
   </tr>
   <tr>
 
@@ -18,10 +18,10 @@
     <td>£<%= (@book.buying_cost - @book.price).abs %></td>
     <td>£<%= @book.price %></td>
     <td><%= @book.stock %></td>
-    <td><a href="/BearAndBadger/publishers/<%= @book.publisher_id %>"><%= Publisher.find(@book.publisher_id).name %></a>
-    <td><a href="/BearAndBadger/genres/<%= @book.genre_id %>"><%= Genre.find(@book.genre_id).name %></a>
-    <td><a href="/BearAndBadger/books/<%= @book.id %>/edit">Edit</a>
->
+    <td><a href="/BearAndBadger/publishers/<%= @book.publisher_id %>"><%= Publisher.find(@book.publisher_id).name %></a> </td>
+    <td><a href="/BearAndBadger/genres/<%= @book.genre_id %>"><%= Genre.find(@book.genre_id).name %></a> </td>
+    <td><a href="/BearAndBadger/books/<%= @book.id %>/edit">Edit</a> >>> </td>
+
   </tr>
    
  

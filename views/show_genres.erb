@@ -2,9 +2,12 @@
 <table id="t01">
   <tr>
     <th><%= @genres.name %></th>
+
   </tr>
   <tr>
     <td>ID:<%= @genres.id %></td>
+    <td><a href="/BearAndBadger/genres/<%= @genres.id %>/edit-genre">Edit</a> >>> </td>
+
   </tr>
 </table>
 
@@ -14,6 +17,7 @@
   <%if book.genre_id == @genres.id%>
   <th> <%= book.name %> </th>
   <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
+  
 <% end %>
 </tr>
 

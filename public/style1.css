@@ -58,3 +58,9 @@ body {
   width: 100%;
   background-color:rgba(156, 224, 245, 0.863);
 }
+input, textarea, select, button {
+  width : 250px;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
