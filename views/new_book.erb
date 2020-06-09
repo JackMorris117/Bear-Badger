@@ -3,17 +3,17 @@
   <div class="form-wrapper">
     
     <div class="form-el">
-      <label for="name">Title:</label>
+      <label for="name"style="background-color: lightblue">Title:</label>
       <input type="text" name="name" id="name"/>
     </div>
 
     <div class="form-el">
-      <label for="author">Author:</label>
+      <label for="author"style="background-color: lightblue">Author:</label>
       <input type="text" name="author" id="author"/>
     </div>
 
     <div class="form-el">
-      <label for="publisher_select">Select Publisher:</label> 
+      <label for="publisher_select"style="background-color: lightblue">Select Publisher:</label> 
       <select name="publisher_id" id="publisher_select">
         <% @publishers.each do |publisher| %>
             <option value=<%= publisher.id %>><%= publisher.name%></option>
@@ -22,7 +22,7 @@
     </div>
 
      <div class="form-el">
-      <label for="genre_select">Select Genre:</label> 
+      <label for="genre_select"style="background-color: lightblue">Select Genre:</label> 
       <select name="genre_id" id="genre_select">
         <% @genres.each do |genre| %>
             <option value=<%= genre.id %>><%= genre.name %></option>
@@ -31,22 +31,22 @@
     </div>
 
     <div class="form-el">
-      <label for="buying_cost">Buying Cost:</label>
+      <label for="buying_cost"style="background-color: lightblue">Buying Cost:</label>
       <input type="number" name="buying_cost" id="buying_cost"/>
     </div>
 
     <div class="form-el">
-      <label for="price">Price:</label>
+      <label for="price"style="background-color: lightblue">Price:</label>
       <input type="number" name="price" id="price"/>
     </div>
 
     <div class="form-el">
-      <label for="stock">Stock:</label>
+      <label for="stock"style="background-color: lightblue">Stock:</label>
       <input type="number" name="stock" id="stock"/>
     </div>
 
     <div class="form-el">
-      <label for="description">Description:</label><br>
+      <label for="description"style="background-color: lightblue">Description:</label><br>
       <textarea rows="4" cols="50" name="description"></textarea>
     </div>
 
