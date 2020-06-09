@@ -17,10 +17,7 @@
   <%if book.genre_id == @genres.id%>
   <th> <%= book.name %> </th>
   <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
-  
-<% end %>
-</tr>
-
+  <% end %>
 <% end %>
 
 <form action="/BearAndBadger/genres/<%= @genres.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
