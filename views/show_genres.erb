@@ -8,7 +8,15 @@
   </tr>
 </table>
 
-
+<table id="t03">
+<% @books.each do |book| %>
+<tr>
+  <%if book.genre_id == @genres.id%>
+  <th> <%= book.name %> </th>
+  <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
+  </tr>
+<% end %>
+<% end %>
 <span style="background-color: lightblue"><a href="/BearAndBadger/genres/<%= @genres.id %>/edit-genre">Edit</a>
 </span>
 <form action="/BearAndBadger/genres/<%= @genres.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

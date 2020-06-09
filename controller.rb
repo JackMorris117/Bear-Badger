@@ -73,13 +73,13 @@ get '/BearAndBadger/books/:id'do
     erb(:show_books)
 end
 get '/BearAndBadger/publishers/:id'do 
-    @book = Book.all
+    @books = Book.all
     @publishers = Publisher.find(params[:id])
     @genres = Genre.all
     erb(:show_publishers)
 end
 get '/BearAndBadger/genres/:id'do 
-    @book = Book.all
+    @books = Book.all
     @publishers = Publisher.all
     @genres = Genre.find(params[:id])
     erb(:show_genres)
