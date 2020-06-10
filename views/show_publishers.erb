@@ -14,8 +14,11 @@
 <% @books.each do |book| %>
   <%if book.publisher_id == @publishers.id%>
   <th> <%= book.name %> </th>
-  <td><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></td>
+    <th><a href="/BearAndBadger/books/<%= book.id %>">Show book</a></th>
+  </tr>
+  <tr>
   <% end %>
+  </tr>
 <% end %>
 
 
