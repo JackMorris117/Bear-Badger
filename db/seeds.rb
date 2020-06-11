@@ -110,7 +110,86 @@ book8 = Book.new({
     'price' => 8.99,
     'stock' => 50,
     'description' => "The groundbreaking program that connects the microbiome and gut health to healthy weight loss, complete with a three-phase plan and recipes. Cutting-edge science has shown that the microbiome is the key to overall mental and physical health — and the secret behind healthy, sustainable weight loss. Drawing on nearly two decades of experience as a specialist in functional medicine and intestinal health, Dr. Raphael Kellman has developed the first diet based on these scientific breakthroughs. Offering a proven program to heal your gut and reset your metabolism, along with meal plans and fifty delicious chef-created recipes, The Microbiome Diet is the key to safe, sustainable weight loss and a lifetime of good health."})
+book9 = Book.new({
+    'name' => 'Cane',
+    'author' => 'Jean Toomer',
+    'publisher_id' => publisher1.id,
+    'genre_id' => genre1.id,
+    'buying_cost' => 3.01,
+    'price' => 8.99,
+    'stock' => 20,
+    'description' => "Cane is a 1923 novel by noted Harlem Renaissance author Jean Toomer. The novel is structured as a series of vignettes revolving around the origins and experiences of African Americans in the United States. The vignettes alternate in structure between narrative prose, poetry, and play-like passages of dialogue. As a result, the novel has been classified as a composite novel or as a short story cycle. Though some characters and situations recur between vignettes, the vignettes are mostly freestanding, tied to the other vignettes thematically and contextually more than through specific plot details."})
 
+book10 = Book.new({
+    'name' => 'Cane',
+    'author' => 'Jean Toomer',
+    'publisher_id' => publisher1.id,
+    'genre_id' => genre1.id,
+    'buying_cost' => 3.01,
+    'price' => 8.99,
+    'stock' => 20,
+    'description' => "Cane is a 1923 novel by noted Harlem Renaissance author Jean Toomer. The novel is structured as a series of vignettes revolving around the origins and experiences of African Americans in the United States. The vignettes alternate in structure between narrative prose, poetry, and play-like passages of dialogue. As a result, the novel has been classified as a composite novel or as a short story cycle. Though some characters and situations recur between vignettes, the vignettes are mostly freestanding, tied to the other vignettes thematically and contextually more than through specific plot details."})
+    
+book11 = Book.new({
+    'name' => 'Frankenstein',
+    'author' => 'Mary Shelly',
+    'publisher_id' => publisher1.id,
+    'genre_id' => genre2.id,
+    'buying_cost' => 3.01,
+    'price' => 9.99,
+    'stock' => 10,
+    'description' => "Part of a new six-volume series of the best in classic horror, selected by Academy Award-winning director of The Shape of Water Guillermo del Toro. Nominated as one of America’s best-loved novels by PBS’s The Great American Read"})
+    
+book12 = Book.new({
+    'name' => 'Haunted Castles',
+    'author' => 'Ray Russell',
+    'publisher_id' => publisher1.id,
+    'genre_id' => genre2.id,
+    'buying_cost' => 3.01,
+    'price' => 11.99,
+    'stock' => 0,
+    'description' => "Horror legend Ray Russell’s haunting and macabre stories, including “perhaps the finest example of the modern Gothic ever written” (Stephen King), with a foreword by acclaimed filmmaker Guillermo del Toro"})
+    
+book13 = Book.new({
+    'name' => 'Brave New World',
+    'author' => 'Aldous Huxley',
+    'publisher_id' => publisher1.id,
+    'genre_id' => genre3.id,
+    'buying_cost' => 3.01,
+    'price' => 8.99,
+    'stock' => 2,
+    'description' => "Far in the future, the World Controllers have created the ideal society. Through clever use of genetic engineering, brainwashing and recreational sex and drugs all its members are happy consumers. Bernard Marx seems alone harbouring an ill-defined longing to break free. A visit to one of the few remaining Savage Reservations where the old, imperfect life still continues, may be the cure for his distress..."})
+
+book14 = Book.new({
+    'name' => 'The Order',
+    'author' => 'Daniel Silva',
+    'publisher_id' => publisher3.id,
+    'genre_id' => genre3.id,
+    'buying_cost' => 2.01,
+    'price' => 10.99,
+    'stock' => 2,
+    'description' => "From Daniel Silva, author of the #1 New York Times bestsellers The New Girl and The Other Woman, comes a stunning new action-packed thriller of high stakes international intrigue featuring the enigmatic art restorer and master spy Gabriel Allon."})
+
+book15 = Book.new({
+    'name' => 'Not My Daughter',
+    'author' => 'Suzy K Quin',
+    'publisher_id' => publisher3.id,
+    'genre_id' => genre3.id,
+    'buying_cost' => 3.01,
+    'price' => 8.99,
+    'stock' => 0,
+    'description' => "The new novel from top-ten bestseller Suzy K Quinn is an addictive and emotional psychological thriller, perfect for fans of Claire McGowan’s The Other Wife, Sue Watson’s The Sister-in-Law, C. L. Taylor’s Strangers and Harriet Tyce’s Blood Orange."})
+
+book16 = Book.new({
+    'name' => 'Across The Water',
+    'author' => 'Ingrid Alexandra',
+    'publisher_id' => publisher3.id,
+    'genre_id' => genre3.id,
+    'buying_cost' => 3.01,
+    'price' => 7.99,
+    'stock' => 20,
+    'description' => "FIn a remote, boat-access only house, Liz Dawson’s lifeline to the real world is her window, where she watches the people who live in the three identical houses that sit side by side across the creek. But it’s the middle house Liz finds herself drawn to most: the beautiful young mother, Delilah Waters, and her baby."})
+    
 book1.save
 book2.save
 book3.save
@@ -119,3 +198,12 @@ book5.save
 book6.save
 book7.save
 book8.save
+book9.save
+book10.save
+book11.save
+book12.save
+book13.save
+book14.save
+book15.save
+book16.save
+
